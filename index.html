@@ -1,7 +1,9 @@
 <h1>JavaScript Bookmarklets</h1>
 <h2>Drag a link into your bookmark bar</h2>
 
-<a href=`javascript: (() => {
+
+<script>
+  const videoSpeed = encodeURI(`javascript: (() => {
   if (document.getElementsByTagName("video").length) {
     let video = document.getElementsByTagName("video")[0];
     let speed = video.playbackRate;
@@ -10,14 +12,19 @@
   } else {
     console.log("Can't find a video.");
   }
-})();`>Custom Video Speed</a>
+})();`)
 
-<a href=`javascript: (() => {
+  const toggleVideoSpeed = encodeURI(`javascript: (()=> {
   if (document.getElementsByTagName("video").length) {
-    let video = document.getElementsByTagName("video")[0];
-    let speed = video.playbackRate;
-    video.playbackRate = speed == 16 ? 1 : 16;
+  let video = document.getElementsByTagName("video")[0];
+  let speed = video.playbackRate;
+  video.playbackRate = speed == 16 ? 1 : 16;
   } else {
-    console.log("Can't find a video.");
+  console.log("Can't find a video.");
   }
-})();`>Skip Ads, Toggle 1x/16x</a>
+  })();`);
+</script>
+
+<a href=videoSpeed>Custom Video Speed</a>
+
+<a href=toggleVideoSpeed>Skip Ads, Toggle 1x/16x</a>
