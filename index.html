@@ -3,34 +3,34 @@
 
 
 <script>
-  const videoSpeed = encodeURI(`javascript: (() => {
-  if (document.getElementsByTagName("video").length) {
-    let video = document.getElementsByTagName("video")[0];
-    let speed = video.playbackRate;
-    let input = Math.min(Math.max(parseFloat(prompt("How fast?\n0x⟷16.0x", speed)), 0), 16);
-    video.playbackRate = isNaN(input) ? speed : input;
-  } else {
-    console.log("Can't find a video.");
-  }
-})();`);
-  
-  const videoSpeedLink = document.createElement('a');
-  videoSpeedLink.href = videoSpeed;
-  videoSpeedLink.textContent = "Custom Video Speed";
-  document.body.appendChild(videoSpeedLink);
+  const addScript = (text, code) => {
+    const newDiv = document.createElement('div');
+    document.body.appendChild(newDiv);
 
-  const toggleVideoSpeed = encodeURI(`javascript: (()=> {
-  if (document.getElementsByTagName("video").length) {
-  let video = document.getElementsByTagName("video")[0];
-  let speed = video.playbackRate;
-  video.playbackRate = speed == 16 ? 1 : 16;
-  } else {
-  console.log("Can't find a video.");
-  }
+    const link = document.createElement('a');
+    link.href = endodeURI(code);
+    link.textContent = text;
+    newDiv.appendChild(link);
+  };
+
+  addScript("Custom Video Speed", `javascript: (() => {
+    if (document.getElementsByTagName("video").length) {
+      let video = document.getElementsByTagName("video")[0];
+      let speed = video.playbackRate;
+      let input = Math.min(Math.max(parseFloat(prompt("How fast?\n0x⟷16.0x", speed)), 0), 16);
+      video.playbackRate = isNaN(input) ? speed : input;
+    } else {
+      console.log("Can't find a video.");
+    }
   })();`);
-  
-  const toggleSpeedLink = document.createElement('a');
-  toggleSpeedLink.href = toggleSpeedLink;
-  toggleSpeedLink.textContent = "Skip Ads, Toggle 1x/16x";
-  document.body.appendChild(toggleSpeedLink);
+
+  addScript("Skip Ads, Toggle 1x/16x", `javascript: (() => {
+    if (document.getElementsByTagName("video").length) {
+      let video = document.getElementsByTagName("video")[0];
+      let speed = video.playbackRate;
+      video.playbackRate = speed == 16 ? 1 : 16;
+    } else {
+      console.log("Can't find a video.");
+    }
+  })();`);
 </script>
