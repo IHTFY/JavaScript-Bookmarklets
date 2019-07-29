@@ -32,7 +32,7 @@ addScript("Skip Ads, Toggle 1x/16x", `javascript: (() => {
         }
       })();`);
 
-addScript("Power Hour",`javascript: (() => {
+addScript("Power Hour", `javascript: (() => {
   if (document.getElementsByClassName('ytp-next-button ytp-button').length) {
     const emojis = n => {
       const doubles = n => Math.floor(n / 2);
