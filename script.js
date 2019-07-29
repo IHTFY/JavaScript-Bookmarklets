@@ -26,4 +26,5 @@ const addScript = (text, URI) => {
   ["Custom Video Speed", "snippets/custom-video-speed.js"],
   ["Skip Ads, Toggle 1x/16x", "snippets/skip-ads.js"],
   ["Power Hour", "snippets/power-hour.js"],
+  ["Soundcloud RSS", "snippets/soundcloud-rss.js"],
 ].forEach(async snippet => addScript(snippet[0], await toURI(await readJS(snippet[1]))));
