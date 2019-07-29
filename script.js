@@ -8,7 +8,7 @@ const addScript = (text, code) => {
   const link = document.createElement('a');
   link.href = encodeURI(code);
   link.textContent = text;
-  newDiv.appendChild(link);
+  newItem.appendChild(link);
 };
 
 addScript("Custom Video Speed", `javascript: (() => {
