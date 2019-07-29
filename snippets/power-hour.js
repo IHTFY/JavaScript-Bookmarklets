@@ -10,7 +10,7 @@ if (document.getElementsByClassName('ytp-next-button ytp-button').length) {
   console.log('Starting!');
   const timer = setInterval(() => {
     document.getElementsByClassName('ytp-next-button ytp-button')[0].click();
-    console.log(`\${++shots} shot${shots > 1 ? 's' : ''} down ${60 - shots} to go! ${emojis(shots)}`);
+    console.log(`${++shots} shot${shots > 1 ? 's' : ''} down ${60 - shots} to go! ${emojis(shots)}`);
     if (shots === 60) {
       clearInterval(timer);
       alert('YOU POWERED THROUGH THE HOUR!');

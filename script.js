@@ -5,13 +5,12 @@ const readJS = async file => {
   const response = await fetch(file);
   const text = await response.text();
   return text;
-}
+};
 
 const toURI = async code => {
-  code = code.replace(/\n/g, '').replace(/\s+/g, ' ').replace(/ ?([{};,=?:()]) ?/g, '$1');
   code = `javascript:(()=>{${code}})()`;
   return encodeURI(code);
-}
+};
 
 const addScript = (text, URI) => {
   const newItem = document.createElement('li');
