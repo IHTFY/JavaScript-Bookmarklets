@@ -1,6 +1,9 @@
+const list = document.createElement('ol');
+document.body.appendChild(list);
+
 const addScript = (text, code) => {
-  const newDiv = document.createElement('div');
-  document.body.appendChild(newDiv);
+  const newItem = document.createElement('li');
+  list.appendChild(newItem);
 
   const link = document.createElement('a');
   link.href = encodeURI(code);
