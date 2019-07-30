@@ -22,9 +22,12 @@ const addScript = (text, URI) => {
   newItem.appendChild(link);
 };
 
-[
+
+Promise.all([
   ["Custom Video Speed", "snippets/custom-video-speed.js"],
   ["Skip Ads, Toggle 1x/16x", "snippets/skip-ads.js"],
   ["Power Hour", "snippets/power-hour.js"],
   ["Soundcloud RSS", "snippets/soundcloud-rss.js"],
-].forEach(async snippet => addScript(snippet[0], await toURI(await readJS(snippet[1]))));
+  ["Scale SVG Path", "snippets/scale-svg-path.js"],
+].map(async snippet => [snippet[0], await toURI(await readJS(snippet[1]))]))
+  .then(codifiedPairs => codifiedPairs.forEach(pair => addScript(pair[0], pair[1])));
