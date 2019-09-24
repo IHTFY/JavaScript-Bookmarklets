@@ -29,5 +29,6 @@ Promise.all([
   ["Power Hour", "snippets/power-hour.js"],
   ["Soundcloud RSS", "snippets/soundcloud-rss.js"],
   ["Scale SVG Path", "snippets/scale-svg-path.js"],
+  ["Unix time of a tweet", "snippets/tweet-time.js"],
 ].map(async snippet => [snippet[0], await toURI(await readJS(snippet[1]))]))
   .then(codifiedPairs => codifiedPairs.forEach(pair => addScript(pair[0], pair[1])));
