@@ -1,1 +1,1 @@
-alert(document.querySelector("#permalink-overlay-body ._timestamp.js-short-timestamp").getAttribute('data-time'))
+alert(document.querySelector("#permalink-overlay-body .js-initial-focus ._timestamp.js-short-timestamp").getAttribute('data-time'))
