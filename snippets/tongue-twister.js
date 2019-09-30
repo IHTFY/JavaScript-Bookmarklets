@@ -1,1 +1,1 @@
-speechSynthesis.speak(new SpeechSynthesisUtterance(prompt("Phrase:","toy boat").repeat(+prompt("Number of times:",3))))
+speechSynthesis.speak(new SpeechSynthesisUtterance((prompt("Phrase:","toy boat")+" ").repeat(+prompt("Number of times:",3))))
