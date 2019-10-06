@@ -30,6 +30,7 @@ const arr = [
   ["Scale SVG Path", "snippets/scale-svg-path.js"],
   ["Unix time of a tweet", "snippets/tweet-time.js"],
   ["Tongue Twister Solver", "snippets/tongue-twister.js"],
+  ["Minify SVG Path", "snippets/minify-svg-path.js"],
 ];
 
 const codify = async snippet => [snippet[0], toURI(await readJS(snippet[1]))];
