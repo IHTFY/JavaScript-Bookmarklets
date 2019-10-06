@@ -13,7 +13,7 @@ const add = () => {
 }
 
 for (let symbol of path.trim()) {
-  if (/\s+/.test(symbol)) {
+  if (/\s|,/.test(symbol)) {
     add();
     continue;
   }
