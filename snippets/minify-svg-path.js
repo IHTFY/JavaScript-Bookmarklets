@@ -41,7 +41,8 @@ for (let symbol of path.trim()) {
 }
 add();
 
-const scaledPath = svgArray.map(i => /\d/.test(i) ? parseFloat(parseFloat(i).toPrecision(2)) : i).join(' ').replace(/0\./g,'.').replace(/ -/g,'-').replace(/\s*([A-Za-z])\s*/g,'$1');
+
+const scaledPath = svgArray.map(i => /\d/.test(i) ? parseFloat(parseFloat(i).toPrecision(2)) : i).join(' ').replace(/\s*([A-Za-z])\s*/g,'$1').replace(/ -/g,'-').replace(/0\./g,'.');
 
 const text = document.createElement('textarea');
 const selection = document.getSelection();
