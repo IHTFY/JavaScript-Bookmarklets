@@ -7,7 +7,7 @@ const readJS = async file => {
   return text;
 };
 
-const toURI = async code => {
+const toURI = code => {
   code = `javascript:(()=>{${code}})()`;
   return encodeURI(code);
 };
@@ -22,8 +22,7 @@ const addScript = (text, URI) => {
   newItem.appendChild(link);
 };
 
-
-Promise.all([
+const arr = [
   ["Custom Video Speed", "snippets/custom-video-speed.js"],
   ["Skip Ads, Toggle 1x/16x", "snippets/skip-ads.js"],
   ["Power Hour", "snippets/power-hour.js"],
@@ -31,5 +30,9 @@ Promise.all([
   ["Scale SVG Path", "snippets/scale-svg-path.js"],
   ["Unix time of a tweet", "snippets/tweet-time.js"],
   ["Tongue Twister Solver", "snippets/tongue-twister.js"],
-].map(async snippet => [snippet[0], await toURI(await readJS(snippet[1]))]))
-  .then(codifiedPairs => codifiedPairs.forEach(pair => addScript(pair[0], pair[1])));
+];
+
+const codify = async snippet => [snippet[0], toURI(await readJS(snippet[1]))];
+
+Promise.all(arr.map(codify))
+  .then(codifiedPairs => codifiedPairs.forEach(pair => addScript(...pair)));
