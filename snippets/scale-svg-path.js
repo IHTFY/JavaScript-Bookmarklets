@@ -1,5 +1,5 @@
 const path = prompt('Paste just the path string. For example: M 2.4 6.8 Z');
-const scale = prompt('The multiplier (scale value):');
+const scale = prompt('The multiplier (scale value):','1');
 
 const svgArray = [];
 let term = '';
@@ -40,9 +40,9 @@ for (let symbol of path.trim()) {
     term += symbol;
   }
 }
+add();
 
-const scaledPath = svgArray.map(i => /\d/.test(i) ? i * scale : i)
-  .join(' ');
+const scaledPath = svgArray.map(i => /\d/.test(i) ? i * scale : i).join(' ');
 
 const text = document.createElement('textarea');
 const selection = document.getSelection();
