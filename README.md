@@ -1,1 +1,1 @@
-This page is live [here](https://ihtfy.github.io/JavaScript-Bookmarklets/)
+This page is live [here](https://jslinks.ihtfy.com)
