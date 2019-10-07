@@ -10,6 +10,7 @@ if (document.getElementsByClassName('ytp-next-button ytp-button').length) {
   console.log('Starting!');
   const timer = setInterval(() => {
     document.getElementsByClassName('ytp-next-button ytp-button')[0].click();
+    console.clear();
     console.log(`${++shots} shot${shots > 1 ? 's' : ''} down ${60 - shots} to go! ${emojis(shots)}`);
     if (shots === 60) {
       clearInterval(timer);
