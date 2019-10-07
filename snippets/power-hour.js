@@ -9,7 +9,7 @@ if (document.getElementsByClassName('ytp-next-button ytp-button').length) {
   };
 
   let shots = 0;
-  console.log('Starting!');
+  say('Starting!');
   const timer = setInterval(() => {
     document.getElementsByClassName('ytp-next-button ytp-button')[0].click();
     console.clear();
@@ -19,7 +19,9 @@ if (document.getElementsByClassName('ytp-next-button ytp-button').length) {
     
     if (shots === 60) {
       clearInterval(timer);
-      alert('YOU POWERED THROUGH THE HOUR!');
+      const done = 'YOU POWERED THROUGH THE HOUR!';
+      say(done);
+      alert(done);
     }
   }, 60 * 1000);
 } else {
