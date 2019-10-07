@@ -1,4 +1,6 @@
 if (document.getElementsByClassName('ytp-next-button ytp-button').length) {
+  const say = words => speechSynthesis.speak(new SpeechSynthesisUtterance(words));
+  
   const emojis = n => {
     const doubles = n => Math.floor(n / 2);
     const singles = n => n % 2;
@@ -11,7 +13,10 @@ if (document.getElementsByClassName('ytp-next-button ytp-button').length) {
   const timer = setInterval(() => {
     document.getElementsByClassName('ytp-next-button ytp-button')[0].click();
     console.clear();
-    console.log(`${++shots} shot${shots > 1 ? 's' : ''} down ${60 - shots} to go! ${emojis(shots)}`);
+    say('Drink!');
+    say(`${++shots} shot${shots > 1 ? 's' : ''} down, ${60 - shots} to go!`);
+    console.log(emojis(shots));
+    
     if (shots === 60) {
       clearInterval(timer);
       alert('YOU POWERED THROUGH THE HOUR!');
