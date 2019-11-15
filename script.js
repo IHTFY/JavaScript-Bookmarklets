@@ -8,7 +8,7 @@ const readJS = async file => {
 };
 
 const toURI = code => {
-  code = `javascript:(()=>{${code}})()`;
+  code = `javascript:{${code}}`;
   return encodeURI(code);
 };
 
