@@ -29,6 +29,7 @@ const arr = [
   ["Soundcloud RSS", "snippets/soundcloud-rss.js"],
   ["Unix time of a tweet", "snippets/tweet-time.js"],
   ["Tongue Twister Solver", "snippets/tongue-twister.js"],
+  ["Wonky Page", "snippets/wonky.js"]
 ];
 
 const codify = async snippet => [snippet[0], toURI(await readJS(snippet[1]))];
