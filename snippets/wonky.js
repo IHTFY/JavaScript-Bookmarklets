@@ -1,1 +1,1 @@
-[...document.querySelectorAll('div')].forEach(i=>i.style.transform=`rotate(${Math.random()}deg)`)
+[...document.querySelectorAll('*')].forEach(i=>i.style.transform=`rotate(${Math.random()}deg)`)
