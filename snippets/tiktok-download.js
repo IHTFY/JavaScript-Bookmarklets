@@ -1,1 +1,17 @@
-window.open(`https://ttdownloader.com/dl.php?v=${btoa(`a:4:{s:9:"watermark";b:0;s:7:"videoId";s:19:"${window.location.pathname.split('/').pop()}";s:3:"uid";s:32:"91f1130c08d98809966817231b2fddea";s:4:"time";i:${~~(Date.now() / 1000)};}`)}`);
+let xhr = new XMLHttpRequest();
+let link = document.getElementsByTagName('video')[0].src;
+let vid = window.location.pathname.split('/').pop();
+xhr.open('GET', link, true);
+xhr.responseType = 'blob';
+xhr.onload = function () {
+  let urlCreator = window.URL || window.webkitURL;
+  let videoUrl = urlCreator.createObjectURL(this.response);
+  let tag = document.createElement('a');
+  tag.href = videoUrl;
+  tag.download = `${vid}.mp4`;
+  tag.click();
+};
+xhr.onerror = err => {
+  alert('Download Failed');
+};
+xhr.send();
