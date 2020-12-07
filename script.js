@@ -70,7 +70,7 @@ const arr = [
   {
     title: "TikTok Channel Download",
     path: "snippets/tiktok-all.js",
-    description: "Download all the videos on a TikTok channel",
+    description: "Download all the videos on a TikTok channel. Very Hacky.",
   }
 ];
 
