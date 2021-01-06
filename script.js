@@ -71,6 +71,11 @@ const arr = [
     title: "TikTok Channel Download",
     path: "snippets/tiktok-all.js",
     description: "Download all the videos on a TikTok channel. Very Hacky.",
+  },
+  {
+    title: "NYT scroller",
+    path: "snippets/nyt.js",
+    description: "Scroll on NYT",
   }
 ];
 
