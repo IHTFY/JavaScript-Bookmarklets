@@ -76,6 +76,11 @@ const arr = [
     title: "NYT scroller",
     path: "snippets/nyt.js",
     description: "Scroll on NYT",
+  },
+  {
+    title: "Twitch Bonus",
+    path: "snippets/twitch-bonus.js",
+    description: "Collect Twitch bonus every 30 seconds",
   }
 ];
 
