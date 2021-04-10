@@ -80,7 +80,7 @@ const arr = [
   {
     title: "Twitch Bonus",
     path: "snippets/twitch-bonus.js",
-    description: "Collect Twitch bonus every 30 seconds",
+    description: "Collect Twitch bonus every 10 seconds",
   }
 ];
 
