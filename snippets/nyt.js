@@ -1,3 +1,4 @@
 document.getElementById('gateway-content').remove();
-document.querySelector("#app > div > div > :last-child").remove();
-document.querySelector("#app > div > div").className = "";
+let app = document.querySelector("#app > div > div");
+app.lastElementChild.remove();
+app.classList.remove(app.classList[0]);
