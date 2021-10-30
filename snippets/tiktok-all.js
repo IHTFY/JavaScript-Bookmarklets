@@ -26,7 +26,7 @@ const scrollDown = () => {
   const thumbs = document.querySelectorAll(`[data-e2e='user-post-item']`);
   if (thumbs.length > numThumbs) {
     numThumbs = thumbs.length;
-    setTimeout(scrollDown, 750);
+    setTimeout(scrollDown, 1000);
   } else {
     console.log(numThumbs + ' videos found');
     [...thumbs].pop().querySelector('a').click();
